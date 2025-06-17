@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Pasien</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 25px;
+            width: 100%;
+            background-color: #f39c12;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d68910;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 25px;
+        }
+        .back-button {
+            display: inline-block;
+            background-color: #95a5a6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Edit Data Pasien</h2>
+
+    <form th:action="@{/update/{index}(index=${index})}" th:object="${pasien}" method="post">
+        <label>Nama:</label>
+        <input type="text" th:field="*{nama}" required>
+
+        <label>Alamat:</label>
+        <input type="text" th:field="*{alamat}" required>
+
+        <label>Penyakit:</label>
+        <input type="text" th:field="*{penyakit}" required>
+
+        <label>Umur:</label>
+        <input type="number" th:field="*{umur}" required>
+
+        <button type="submit">💾 Simpan Perubahan</button>
+    </form>
+
+    <div class="back-link">
+        <a th:href="@{/daftar}" class="back-button">← Kembali ke Daftar Pasien</a>
+    </div>
+</div>
+</body>
+</html>

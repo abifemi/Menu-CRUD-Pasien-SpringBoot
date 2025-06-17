@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Data Pasien</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        input[type="text"], input[type="number"] {
+            margin: 10px 0;
+            padding: 8px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Data Pasien</h1>
+    <form th:action="@{'/update/' + ${index}}" th:object="${pasien}" method="post">
+        <input type="text" th:field="*{nama}" placeholder="Nama" required><br>
+        <input type="number" th:field="*{umur}" placeholder="Umur" required><br>
+        <input type="text" th:field="*{alamat}" placeholder="Alamat" required><br>
+        <input type="text" th:field="*{penyakit}" placeholder="Penyakit" required><br>
+        <input type="submit" value="Konfirmasi Perubahan">
+    </form>
+</body>
+</html>

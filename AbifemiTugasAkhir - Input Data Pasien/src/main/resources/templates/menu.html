@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Menu Utama</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f2f5;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        .menu-box {
+            background: white;
+            border-radius: 15px;
+            display: inline-block;
+            padding: 30px 50px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .menu-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .menu-box li {
+            margin: 20px 0;
+        }
+        .menu-box a {
+            text-decoration: none;
+            color: white;
+            background-color: #3498db;
+            padding: 12px 25px;
+            border-radius: 8px;
+            transition: 0.3s;
+            font-size: 18px;
+            display: inline-block;
+        }
+        .menu-box a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-box">
+        <h1>Selamat Datang</h1>
+        <p>Silakan pilih menu:</p>
+        <ul>
+            <li><a th:href="@{/form}">🏥 Input Data Pasien</a></li>
+            <li><a th:href="@{/daftar}">📄 Lihat / Edit Data Pasien</a></li>
+        </ul>
+    </div>
+</body>
+</html>
